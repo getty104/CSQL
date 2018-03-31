@@ -12,7 +12,7 @@ module CSQL
 
     def execute query
       begin
-        modified_query = query.gsub(/csvfile/, @filepath)
+        modified_query = query.gsub(/csv/, @filepath)
         result,err,process = Open3.capture3("q -H -d \',\' \'#{modified_query}\'")
         if err != ""
           raise CSQLException.new(err)

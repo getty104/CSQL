@@ -1,9 +1,5 @@
 # Csql
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/csql`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
-
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -20,9 +16,21 @@ Or install it yourself as:
 
     $ gem install csql
 
-## Usage
+## Important!
+Before using, you have to install q ([https://github.com/harelba/q/](https://github.com/harelba/q/)) because it is neccesary to use this gem.
 
-TODO: Write usage instructions here
+## Usage
+sample of csv file
+
+|hoge1|hoge2|
+|---|---|
+|hoge|1|
+
+```ruby
+sql = CSQL::SQL.new('/your/csvfile/path')
+p sql.execure("select * from csv") #=> ["hoge1" => "hoge", "hoge2" => 1}]
+# 'from csv' is the template of query
+```
 
 ## Development
 
