@@ -26,15 +26,14 @@ module CSQL
       else
         columns = column.chomp.split(',').map{|c|c.chomp}
       end
-      result = result.chomp.split("\n").map!{|r|
+      return result.chomp.split("\n").map{|r|
         data = r.split(",")
         hash = Hash.new
         data.size.times do |i|
           hash[columns[i]] = data[i]
         end
-        return hash
+        hash
       }
-      return result
     end
   end
 

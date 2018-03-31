@@ -27,8 +27,10 @@ sample of csv file
 |hoge|1|
 
 ```ruby
+require 'csql'
+
 sql = CSQL::SQL.new('/your/csvfile/path')
-p sql.execure("select * from csv") #=> ["hoge1" => "hoge", "hoge2" => 1}]
+p sql.execute("select * from csv") #=> ["hoge1" => "hoge", "hoge2" => "1"}]
 # 'from csv' is the template of query
 ```
 
