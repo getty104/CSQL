@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hayabusatoshihumi@gmail.com"]
 
   spec.summary       = %q{this is a library of operating csv by SQL queries.}
-  spec.description   = %q{this is a library of operating csv by SQL queries. \n you have to install https://github.com/harelba/q/}
+  spec.description   = %q{this is a library of operating csv by SQL queries. you have to install https://github.com/harelba/q/}
   spec.homepage      = "https://github.com/getty104/CSQL"
   spec.license       = "MIT"
 
