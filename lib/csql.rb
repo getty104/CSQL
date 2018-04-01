@@ -24,7 +24,7 @@ module CSQL
       if column == "*"
         columns = CSV.table(@filepath).headers.map(&:to_s)
       else
-        columns = column.chomp.split(',').map{|c|c.chomp}
+        columns = column.chomp.split(',').map{|c|c.gsub('`','').split(/as|AS/).last.strip}
       end
       return result.chomp.split("\n").map{|r|
         data = r.split(",")
