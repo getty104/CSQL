@@ -22,7 +22,7 @@ module CSQL
       column = ast.query_expression.list.to_sql
       columns = nil
       if column == "*"
-        columns = CSV.table(@filepath).headers.map(&:to_s)
+        columns = File.open(@filepath,'r').gets.chomp.split(',').map{|c|c.strip}
       else
         columns = column.chomp.split(',').map{|c|c.gsub('`','').split(/as|AS/).last.strip}
       end
